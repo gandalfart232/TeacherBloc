@@ -7,11 +7,11 @@ import {
   StickyNote, 
   Library, 
   Menu, 
-  X,
   GraduationCap,
   Languages,
   Settings,
-  CalendarDays
+  CalendarDays,
+  BookOpen
 } from 'lucide-react';
 
 const SidebarItem = ({ to, icon: Icon, label, onClick }: any) => {
@@ -42,6 +42,7 @@ export const Layout: React.FC = () => {
     switch(location.pathname) {
       case '/': return t.sidebar.dashboard;
       case '/students': return t.sidebar.students;
+      case '/classes': return t.sidebar.classes;
       case '/notes': return t.sidebar.notes;
       case '/resources': return t.sidebar.resources;
       case '/calendar': return t.sidebar.calendar;
@@ -81,6 +82,7 @@ export const Layout: React.FC = () => {
           <nav className="flex-1 p-4 space-y-2 overflow-y-auto">
             <SidebarItem to="/" icon={LayoutDashboard} label={t.sidebar.dashboard} onClick={() => setIsMobileOpen(false)} />
             <SidebarItem to="/calendar" icon={CalendarDays} label={t.sidebar.calendar} onClick={() => setIsMobileOpen(false)} />
+            <SidebarItem to="/classes" icon={BookOpen} label={t.sidebar.classes} onClick={() => setIsMobileOpen(false)} />
             <SidebarItem to="/students" icon={Users} label={t.sidebar.students} onClick={() => setIsMobileOpen(false)} />
             <SidebarItem to="/notes" icon={StickyNote} label={t.sidebar.notes} onClick={() => setIsMobileOpen(false)} />
             <SidebarItem to="/resources" icon={Library} label={t.sidebar.resources} onClick={() => setIsMobileOpen(false)} />

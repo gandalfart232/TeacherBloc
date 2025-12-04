@@ -1,12 +1,41 @@
+
+export interface ClassGroup {
+  id?: string;
+  ownerId: string;
+  name: string; // e.g. "3º ESO B"
+  subject?: string; // e.g. "Matemáticas"
+  createdAt: number;
+}
+
 export interface Student {
   id?: string;
   ownerId: string;
   firstName: string;
   lastName: string;
-  group: string;
+  groups: string[]; // Array of ClassGroup IDs
   specialNeeds: string[];
   contactInfo: string;
   createdAt: number; // Timestamp
+}
+
+export interface Grade {
+  id?: string;
+  ownerId: string;
+  studentId: string;
+  classGroupId: string;
+  title: string; // "Examen Tema 1" or "Evaluación Final"
+  grade: number;
+  type: 'exam' | 'work' | 'final';
+  date: number;
+}
+
+export interface FollowUpNote {
+  id?: string;
+  ownerId: string;
+  studentId: string;
+  title: string;
+  content: string; // Long text
+  date: number;
 }
 
 export type InterventionType = "Conducta" | "Académico" | "Familia" | "Positivo";

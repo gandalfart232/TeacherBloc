@@ -3,6 +3,7 @@ export const translations = {
     sidebar: {
       dashboard: "Arbela",
       students: "Ikasleak",
+      classes: "Gelak",
       notes: "Oharrak",
       resources: "Baliabideak",
       calendar: "Egutegia",
@@ -33,22 +34,49 @@ export const translations = {
       title: "Ikasleak",
       searchPlaceholder: "Bilatu izena edo taldea...",
       newStudent: "Ikasle Berria",
+      editStudent: "Ikaslea Editatu",
       back: "Zerrendara itzuli",
       history: "Esku-hartzeen Historia",
+      grades: "Kalifikazioak",
       noRecords: "Oraindik ez dago erregistrorik.",
       selectPrompt: "Aukeratu ikasle bat bere fitxa ikusteko",
       addIntervention: "Esku-hartze Berria",
+      addGrade: "Nota Gehitu",
+      editGrade: "Nota Editatu",
+      addFollowUp: "Sarrera Berria",
+      tabs: {
+        interventions: "Esku-hartzeak",
+        grades: "Notak",
+        followup: "Jarraipena"
+      },
       forms: {
         firstName: "Izena",
         lastName: "Abizenak",
-        group: "Taldea (adib: DBH 3)",
+        group: "Gelak aukeratu",
         contact: "Gurasoen Emaila/Tel",
-        tags: "Etiketak (komaz banatuta)",
+        tags: "Behar Bereziak",
+        addTag: "Beste bat gehitu...",
         saveStudent: "Ikaslea Gorde",
+        updateStudent: "Aldaketak Gorde",
         type: "Mota",
         description: "Deskribapena",
         descPlaceholder: "Gorabeheraren xehetasunak...",
         saveRecord: "Erregistroa Gorde",
+        examTitle: "Azterketa / Lana",
+        gradeValue: "Nota (0-10)",
+        gradeType: "Mota (Azterketa, Lana...)",
+        followUpTitle: "Izenburua (Bilera, Txostena...)",
+        followUpContent: "Idatzi hemen edukia...",
+      },
+      specialNeedsOptions: {
+        adhd: "TDAH",
+        dyslexia: "Dislexia",
+        asd: "TEA",
+        highAbilities: "Gaitasun Handiak",
+        reinforcement: "Errefortzua",
+        language: "Hizkuntza",
+        hearing: "Entzumena",
+        visual: "Ikusmena"
       },
       status: {
         pending: "Egiteke",
@@ -61,6 +89,18 @@ export const translations = {
         Académico: "Akademikoa",
         Familia: "Familia",
         Positivo: "Positiboa",
+      }
+    },
+    classes: {
+      title: "Nire Gelak",
+      addClass: "Gela Sortu",
+      noClasses: "Ez duzu gelarik sortu oraindik.",
+      studentsInClass: "Gela honetako ikasleak",
+      addStudentToClass: "Gehitu ikaslea gela honetara",
+      forms: {
+        name: "Gela Izena (adib: 3. DBH B)",
+        subject: "Ikasgaia",
+        save: "Gela Gorde"
       }
     },
     notes: {
@@ -130,6 +170,7 @@ export const translations = {
     sidebar: {
       dashboard: "Dashboard",
       students: "Mis Alumnos",
+      classes: "Clases",
       notes: "Notas",
       resources: "Recursos",
       calendar: "Calendario",
@@ -160,22 +201,49 @@ export const translations = {
       title: "Alumnos",
       searchPlaceholder: "Buscar por nombre o grupo...",
       newStudent: "Nuevo Alumno",
+      editStudent: "Editar Alumno",
       back: "Volver a lista",
       history: "Historial de Intervenciones",
+      grades: "Calificaciones",
       noRecords: "No hay registros aún.",
       selectPrompt: "Selecciona un alumno para ver su ficha",
       addIntervention: "Nueva Intervención",
+      addGrade: "Añadir Nota",
+      editGrade: "Editar Nota",
+      addFollowUp: "Nueva Entrada",
+      tabs: {
+        interventions: "Intervenciones",
+        grades: "Notas",
+        followup: "Seguimiento"
+      },
       forms: {
         firstName: "Nombre",
         lastName: "Apellidos",
-        group: "Grupo (ej: 3º ESO B)",
+        group: "Selección de Clases",
         contact: "Email/Teléfono padres",
-        tags: "Etiquetas (separar por comas)",
+        tags: "Necesidades Especiales",
+        addTag: "Añadir otra...",
         saveStudent: "Guardar Alumno",
+        updateStudent: "Actualizar Alumno",
         type: "Tipo",
         description: "Descripción",
         descPlaceholder: "Detalles de la incidencia...",
         saveRecord: "Guardar Registro",
+        examTitle: "Examen / Trabajo",
+        gradeValue: "Nota (0-10)",
+        gradeType: "Tipo (Examen, Trabajo...)",
+        followUpTitle: "Título (Reunión, Informe...)",
+        followUpContent: "Escribe aquí el contenido...",
+      },
+      specialNeedsOptions: {
+        adhd: "TDAH",
+        dyslexia: "Dislexia",
+        asd: "TEA",
+        highAbilities: "Altas Capacidades",
+        reinforcement: "Refuerzo",
+        language: "Lenguaje",
+        hearing: "Auditiva",
+        visual: "Visual"
       },
       status: {
         pending: "Pendiente",
@@ -188,6 +256,18 @@ export const translations = {
         Académico: "Académico",
         Familia: "Familia",
         Positivo: "Positivo",
+      }
+    },
+    classes: {
+      title: "Mis Clases",
+      addClass: "Crear Clase",
+      noClasses: "No has creado ninguna clase todavía.",
+      studentsInClass: "Alumnos en esta clase",
+      addStudentToClass: "Añadir alumno a esta clase",
+      forms: {
+        name: "Nombre Clase (ej: 3º ESO B)",
+        subject: "Asignatura",
+        save: "Guardar Clase"
       }
     },
     notes: {

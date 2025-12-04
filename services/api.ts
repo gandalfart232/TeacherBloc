@@ -4,7 +4,7 @@ import {
   updateDoc, deleteDoc, doc, Timestamp, orderBy 
 } from "firebase/firestore";
 import { CURRENT_USER_ID, firebaseConfig as staticConfig } from "../config/userConfig";
-import { Student, Intervention, Resource, QuickNote, CalendarEvent } from "../types";
+import { Student, Intervention, Resource, QuickNote, CalendarEvent, ClassGroup, Grade, FollowUpNote } from "../types";
 
 // --- MOCK DATA GENERATOR ---
 const getMockId = () => Math.random().toString(36).substr(2, 9);
@@ -16,9 +16,19 @@ const getLocalDB = () => {
   if (stored) return JSON.parse(stored);
   
   const initial = {
+    classes: [
+      { id: "c1", ownerId: CURRENT_USER_ID, name: "3º ESO B", subject: "Tutoría", createdAt: Date.now() },
+      { id: "c2", ownerId: CURRENT_USER_ID, name: "4º ESO A", subject: "Matemáticas", createdAt: Date.now() }
+    ],
     students: [
-      { id: "s1", ownerId: CURRENT_USER_ID, firstName: "Alex", lastName: "García", group: "3º ESO B", specialNeeds: ["TDAH"], contactInfo: "madre@test.com", createdAt: Date.now() },
-      { id: "s2", ownerId: CURRENT_USER_ID, firstName: "María", lastName: "Lopez", group: "3º ESO B", specialNeeds: [], contactInfo: "600123456", createdAt: Date.now() }
+      { id: "s1", ownerId: CURRENT_USER_ID, firstName: "Alex", lastName: "García", groups: ["c1"], specialNeeds: ["TDAH"], contactInfo: "madre@test.com", createdAt: Date.now() },
+      { id: "s2", ownerId: CURRENT_USER_ID, firstName: "María", lastName: "Lopez", groups: ["c1", "c2"], specialNeeds: [], contactInfo: "600123456", createdAt: Date.now() }
+    ],
+    grades: [
+      { id: "g1", ownerId: CURRENT_USER_ID, studentId: "s2", classGroupId: "c2", title: "Examen T1", grade: 8.5, type: 'exam', date: Date.now() }
+    ],
+    follow_up_notes: [
+      { id: "f1", ownerId: CURRENT_USER_ID, studentId: "s1", title: "Reunión con padres", content: "Se ha acordado revisar la agenda diariamente. La madre comenta que en casa está más tranquilo.", date: Date.now() - 100000000 }
     ],
     interventions: [
       { id: "i1", ownerId: CURRENT_USER_ID, studentId: "s1", studentName: "Alex García", type: "Conducta", description: "Interrupción constante en clase de Mates.", date: Date.now(), status: "pendiente" },
